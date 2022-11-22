@@ -2,6 +2,7 @@ package magasin.domain;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 public class Basket {
@@ -19,7 +20,7 @@ public class Basket {
         return id;
     }
 
-    public ArrayList<LigneDeCommande> getLignesDeCommande() {
+    public List<LigneDeCommande> getLignesDeCommande() {
         return lignesDeCommande;
     }
 
