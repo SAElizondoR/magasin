@@ -1,17 +1,23 @@
 package magasin.domain;
 
 public class LigneDeCommande {
+    private final LigneDeCommandeId id;
     private final Reference reference;
     private Integer quantite;
     private Integer montant;
 
-    public LigneDeCommande(Reference reference, Integer quantite) {
+    public LigneDeCommande(LigneDeCommandeId id, Reference reference, Integer quantite) {
+        this.id = id;
         this.reference = reference;
         this.quantite = quantite;
         montant = quantite * reference.getPrix();
     }
 
-    public Reference getRef() {
+    public LigneDeCommandeId getId() {
+        return id;
+    }
+
+    public Reference getReference() {
         return reference;
     }
 

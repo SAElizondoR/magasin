@@ -21,7 +21,7 @@ public class BasketRepositoryInJSON implements BasketRepository {
         
         for (LigneDeCommande ligne: basket.getLignesDeCommande()) {
             
-            Reference ref = ligne.getRef();
+            Reference ref = ligne.getReference();
             JsonObject ligneDeCommandeObject = Json.createObjectBuilder()
             .add("id", ref.getRef().toString())
             .add("nom", ref.getNom())

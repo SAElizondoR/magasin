@@ -24,9 +24,13 @@ public class Basket {
         return lignesDeCommande;
     }
 
+    public Integer getMontant() {
+        return montant;
+    }
+
     void addReference(Reference reference, Integer quantite) {
         LigneDeCommande ligneDeCommande =
-            new LigneDeCommande(reference, quantite);
+            new LigneDeCommande(new LigneDeCommandeId(), reference, quantite);
         lignesDeCommande.add(ligneDeCommande);
         montant += ligneDeCommande.getMontant();
     }
@@ -35,7 +39,7 @@ public class Basket {
         Iterator<LigneDeCommande> iter = lignesDeCommande.iterator();
         while (iter.hasNext()) {
             LigneDeCommande actual = iter.next();
-            if (actual.getRef() == ref) {
+            if (actual.getReference() == ref) {
                 iter.remove();
                 return;
             }
